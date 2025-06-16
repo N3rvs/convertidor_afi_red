@@ -54,6 +54,23 @@ ng e2e
 
 Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
 
+## Excel to AFI Conversion
+
+A Node.js helper script converts an Excel spreadsheet into a fixed-width AFI file that can be validated with SILTRA.
+
+To run the converter use:
+
+```bash
+npm run convert -- <input.xlsx> <output.afi>
+```
+
+`<input.xlsx>` should contain a header row followed by:
+```
+NSS | DNI | First Name | Last Name 1 | Last Name 2 | Company | Start Date
+```
+
+The script generates a header and trailer record automatically and writes a 160‑character format required by SILTRA.
+
 ## Additional Resources
 
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
